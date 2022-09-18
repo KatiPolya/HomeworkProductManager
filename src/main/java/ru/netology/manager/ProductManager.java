@@ -4,7 +4,7 @@ import ru.netology.domain.Product;
 import ru.netology.repository.ProductRepository;
 
 public class ProductManager {
-    public ProductRepository repo;
+    protected ProductRepository repo;
 
     public ProductManager(ProductRepository repo) {
         this.repo = repo;
@@ -16,14 +16,14 @@ public class ProductManager {
 
     public Product[] searchBy(String text) {
         Product[] result = new Product[0]; // тут будем хранить подошедшие запросу продукты
-        for (Product product: repo.getProducts()) {
+        for (Product product : repo.getProducts()) {
             if (matches(product, text)) {
                 Product[] tmp = new Product[result.length + 1];
-       for (int i = 0; i < result.length; i++) {
-          tmp[i] = result[i];
-        }
-        tmp[tmp.length - 1] = product;
-        result = tmp;
+                for (int i = 0; i < result.length; i++) {
+                    tmp[i] = result[i];
+                }
+                tmp[tmp.length - 1] = product;
+                result = tmp;
 
             }
         }
@@ -40,8 +40,6 @@ public class ProductManager {
         // или в одну строку:
         // return product.getName().contains(search);
     }
-
-
 
 
 }

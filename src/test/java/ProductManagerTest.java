@@ -11,12 +11,12 @@ public class ProductManagerTest {
     ProductRepository repo = new ProductRepository();
     ProductManager manager = new ProductManager(repo);
 
-    Product product1 = new Product (14,"носки женские", 120);
-    Product product2 = new Product (15,"сумка", 500);
-    Product product3 = new Product (16,"очки", 120);
-    Product product4 = new Book(17, "Война и мир", 300,"Толстой");
+    Product product1 = new Product(14, "носки женские", 120);
+    Product product2 = new Product(15, "сумка", 500);
+    Product product3 = new Product(16, "очки", 120);
+    Product product4 = new Book(17, "Война и мир", 300, "Толстой");
     Product product5 = new Smartphone(45, "Nokia", 4000);
-    Product product6 = new Product (14,"носки мужские", 120);
+    Product product6 = new Product(14, "носки мужские", 120);
 
 
     @BeforeEach
@@ -30,9 +30,9 @@ public class ProductManagerTest {
     }
 
     @Test
-   public void shouldSearchByName1 () {
+    public void shouldSearchByName1() {
 
-        Product[] expected = { product4 };
+        Product[] expected = {product4};
         Product[] actual = manager.searchBy("мир");
         ;
 
@@ -41,9 +41,9 @@ public class ProductManagerTest {
     }
 
     @Test
-    public void shouldSearchByName2 () {
+    public void shouldSearchByName2() {
 
-        Product[] expected = { product1, product6 };
+        Product[] expected = {product1, product6};
         Product[] actual = manager.searchBy("носки");
         ;
 

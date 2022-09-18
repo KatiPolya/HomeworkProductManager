@@ -6,12 +6,11 @@ import ru.netology.domain.Smartphone;
 import ru.netology.repository.ProductRepository;
 
 public class ProductRepositoryTest {
-    Product product1 = new Product (14,"носки", 120);
-    Product product2 = new Product (15,"сумка", 500);
-    Product product3 = new Product (16,"очки", 120);
-    Product product4 = new Book(17, "Война и мир", 300,"Толстой");
+    Product product1 = new Product(14, "носки", 120);
+    Product product2 = new Product(15, "сумка", 500);
+    Product product3 = new Product(16, "очки", 120);
+    Product product4 = new Book(17, "Война и мир", 300, "Толстой");
     Product product5 = new Smartphone(45, "Nokia", 4000);
-
 
 
     @Test
